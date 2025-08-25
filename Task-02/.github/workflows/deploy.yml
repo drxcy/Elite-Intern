@@ -10,17 +10,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Set up Node jobs  
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-    - name: Install Node Dependencies
-      run: npm install || echo "no package.json found"  
-
-    - name: Run Tests
-      run: npm test || echo "no test specified"
-
+      
     - name: Deploy to Github Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

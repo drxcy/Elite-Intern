@@ -1,22 +1,22 @@
-name : CD/CI Pipelines
+name: CD/CI Pipelines
+
 on:
   push:
     branches: 
-          - elite-intern
-          - main     
+      - elite-intern
+      - main     
+
 jobs:
   build:
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest   
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
       
-    - name: Deploy to Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./app
-        clean: true
-          
-
-
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app
+          clean: true
